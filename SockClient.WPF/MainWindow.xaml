@@ -1,0 +1,58 @@
+﻿<Window x:Class="SockClient.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SockClient.WPF"
+        mc:Ignorable="d"
+        Title="SYNC SOCKET CLIENT 1 -1 " Height="805" Width="809" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <GroupBox x:Name="grpConfig" Header="Server connection" HorizontalAlignment="Left" Height="95" Margin="0,0,-8,0" VerticalAlignment="Top" Width="800">
+            <Grid>
+                <Label Content="Server IP : " HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Server listening port : " HorizontalAlignment="Left" Margin="149,10,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="txtPort" HorizontalAlignment="Left" Height="22" Margin="157,41,0,0" TextWrapping="Wrap" Text="0" TextAlignment="Right" VerticalAlignment="Top" Width="108" FontSize="14"/>
+                <Button x:Name="btnSaveConfig" Content="Save configuration" HorizontalAlignment="Left" Margin="319,14,0,0" VerticalAlignment="Top" Width="121" Height="22" Click="BtnSaveConfig_Click"/>
+                <TextBox x:Name="txtIP" HorizontalAlignment="Left" Height="22" Margin="10,41,0,0" TextWrapping="Wrap" Text="127.0.0.1" TextAlignment="Left" VerticalAlignment="Top" Width="118" FontSize="14"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Info : this is what the server will understand ..." HorizontalAlignment="Left" Height="666" Margin="0,100,0,0" VerticalAlignment="Top" Width="334" >
+            <Grid  Margin="0,0,0,0"  Background="#FFE0F3F3">
+                <TextBlock x:Name="tbkDictionary" HorizontalAlignment="Left" Margin="0,0,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Background="Transparent"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpStart" Header="Start connection" HorizontalAlignment="Left" Height="100" Margin="339,100,0,0" VerticalAlignment="Top" Width="452">
+            <Grid>
+                <Button x:Name="btnTest" Content="Test connection" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="104" Click="BtnTest_Click"/>
+                <TextBox x:Name="txtActiveFolder" HorizontalAlignment="Left" Height="24" Margin="10,44,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="420" IsEnabled="False"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpStop" Header="Stop connection" HorizontalAlignment="Left" Height="69" Margin="339,200,0,0" VerticalAlignment="Top" Width="452">
+            <Grid>
+                <Button x:Name="btnStop" Content="Stop connection" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="104" Click="BtnStop_Click"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpInstruction" Header="Communication" HorizontalAlignment="Left" Height="135" Margin="339,274,0,0" VerticalAlignment="Top" Width="452">
+            <Grid>
+                <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Height="29" Margin="326,8,0,0" VerticalAlignment="Top" Width="104" Click="BtnSend_Click" />
+                <ComboBox x:Name="cmbInstructions" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="226" SelectionChanged="CmbInstructions_SelectionChanged"/>
+                <Label x:Name="lblArgument1" Content="" HorizontalAlignment="Left" Margin="10,48,0,0" VerticalAlignment="Top" Width="226"/>
+                <Label x:Name="lblArgument2" Content="" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="226"/>
+                <TextBox x:Name="txtArgument1" HorizontalAlignment="Left" Height="26" Margin="241,48,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189"/>
+                <TextBox x:Name="txtArgument2" HorizontalAlignment="Left" Height="26" Margin="241,77,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="189"/>
+
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="grpResponse" Header="Server response" HorizontalAlignment="Left" Height="352" Margin="339,414,0,0" VerticalAlignment="Top" Width="452">
+            <Grid>
+                <ScrollViewer Margin="0,0,0,0">
+                    <TextBlock x:Name="tbkResponse" HorizontalAlignment="Left"  Margin="0,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" IsEnabled="False" />
+                </ScrollViewer>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
